@@ -17,11 +17,7 @@ class ExchangeRate extends Component{
         console.log(event.target.value);
         this.props.fetchCurrencyRate(event.target.value);
     }
-apiToken= 'BwzDKO8Cn6yrzi4PrZLUYn94Ily8LQpdsIWUA9stW2UHBJBxA1IAyGek4Lil';
-baseURI = 'https://api.worldtradingdata.com/api/v1/';
-proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
-   
     render(){
         console.log(this.props.posts);
         let currencyExch=[];

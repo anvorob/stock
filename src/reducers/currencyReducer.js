@@ -1,4 +1,4 @@
-import {FETCH_CURRENCIES,FETCH_MUTUAL_FUNDS} from '../actions/types';
+import {FETCH_CURRENCIES,FETCH_MUTUAL_FUNDS,FETCH_STOCK_LIST} from '../actions/types';
 
 const initialState = {
     currency: [],
@@ -21,6 +21,13 @@ const initialState = {
           return {
             ...state,
             mutualFunds: action.payload
+          };
+
+          case FETCH_STOCK_LIST:
+          //console.log(action);
+          return {
+            ...state,
+            stockList: action.payload
           };
       default:
         return state;
