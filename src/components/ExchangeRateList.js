@@ -1,12 +1,11 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../Styles/ExchangeRate.css';
 import currencyList from '../assets/currencyList.json';
 import { fetchCurrencyRate } from '../actions/currencyActions';
 
-class ExchangeRate extends Component{
+class ExchangeRateList extends Component{
 
     constructor(){
         super();
@@ -38,16 +37,7 @@ class ExchangeRate extends Component{
             
         }
         let currHTML = currencyExch.map(sc=>{
-            //return <p><Link to='/rateDetails' params={{ currCode: sc.code }}>{sc.code}</Link>  <span>{"$"+parseFloat(sc.value).toFixed(2)}</span></p>
-            return <p><Link to={{pathname: `/rateDetails/${sc.code}`, query: '/rateDetails'}}>{sc.code}</Link>  <span>{"$"+parseFloat(sc.value).toFixed(2)}</span></p>
-            // return <p><Link to={{
-            //     pathname: '/rateDetails',
-            //     state: {
-            //         currCode: sc.code 
-            //     }
-            //   }}>{sc.code}</Link>  <span>{"$"+parseFloat(sc.value).toFixed(2)}</span></p>
-            
-            
+            return <p><span>{sc.code}</span>  <span>{"$"+parseFloat(sc.value).toFixed(2)}</span></p>
         });
         //console.log(this.props.baseCurr);
         currencyOptions = currencyExch.map(sc=>{return <option>{sc.code}</option>});
@@ -74,4 +64,4 @@ const mapStateToProps = state=>({
     posts: state.posts.items,
     baseCurr:state.posts.baseCurrency
 });
-export default connect(mapStateToProps,{fetchCurrencyRate})(ExchangeRate);
+export default connect(mapStateToProps,{fetchCurrencyRate})(ExchangeRateList);

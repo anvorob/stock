@@ -1,9 +1,19 @@
-import {FETCH_CURRENCIES,FETCH_MUTUAL_FUNDS,FETCH_STOCK_LIST} from './types';
+import {FETCH_CURRENCIES,FETCH_MUTUAL_FUNDS,FETCH_STOCK_LIST,FETCH_CURRENCY_HIST_DATA} from './types';
 
 let apiToken= 'BwzDKO8Cn6yrzi4PrZLUYn94Ily8LQpdsIWUA9stW2UHBJBxA1IAyGek4Lil';
 let baseURI = 'https://api.worldtradingdata.com/api/v1/';
 let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
+//#region Currency
+export const fetchCurrencyHistoryRate=(baseCurrency = "USD", toCurrency="NZD")=>dispatch=>{
+    console.log(baseCurrency,toCurrency)
+    fetch(proxyUrl+baseURI+'forex_history?base='+baseCurrency+'&convert_to='+toCurrency+'&api_token='+apiToken)
+        .then(res=>res.json()).then(post=>dispatch({
+            type: FETCH_CURRENCY_HIST_DATA,
+            baseCurrency:baseCurrency,
+            payload: post
+          }));
+};
 
 export const fetchCurrencyRate=(baseCurrency = "USD")=>dispatch=>{
     
@@ -14,6 +24,8 @@ export const fetchCurrencyRate=(baseCurrency = "USD")=>dispatch=>{
             payload: post
           }));
 };
+
+//#endregion
 
 export const getMutualFund=(symbolArr)=>dispatch=>{
     console.log("getMutualFund");

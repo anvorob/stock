@@ -1,0 +1,7 @@
+.currencySideBarList
+{
+
+    overflow-x: hidden;
+    height: 700px;
+    overflow-y: scroll;
+}

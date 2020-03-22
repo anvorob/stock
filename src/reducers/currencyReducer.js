@@ -1,4 +1,4 @@
-import {FETCH_CURRENCIES,FETCH_MUTUAL_FUNDS,FETCH_STOCK_LIST} from '../actions/types';
+import {FETCH_CURRENCIES,FETCH_MUTUAL_FUNDS,FETCH_STOCK_LIST,FETCH_CURRENCY_HIST_DATA} from '../actions/types';
 
 const initialState = {
     currency: [],
@@ -16,6 +16,13 @@ const initialState = {
           baseCurrency:  action.baseCurrency,
           items: action.payload
         };
+        case FETCH_CURRENCY_HIST_DATA:
+          return {
+            ...state,
+          baseCurrency:  action.baseCurrency,
+          toCurrency:  action.toCurrency,
+          currHistory: action.payload
+          }
         case FETCH_MUTUAL_FUNDS:
           //console.log(action);
           return {
