@@ -1,4 +1,11 @@
-import {FETCH_CURRENCIES,FETCH_MUTUAL_FUNDS,FETCH_STOCK_LIST,FETCH_CURRENCY_HIST_DATA} from '../actions/types';
+import {FETCH_CURRENCIES,
+      FETCH_MUTUAL_FUNDS,
+      FETCH_STOCK_LIST,
+      FETCH_STOCK_HISTORY,
+      FETCH_STOCK_INTRADAY,
+      FETCH_CURRENCY_HIST_DATA,
+      FETCH_SECTOR_DATA,
+      FETCH_NEWS_FEED} from '../actions/types';
 
 const initialState = {
     currency: [],
@@ -7,7 +14,7 @@ const initialState = {
   };
 
   export default function(state = initialState, action) {
-    console.log(action);
+
     switch (action.type) {
       case FETCH_CURRENCIES:
         //console.log(action);
@@ -35,6 +42,34 @@ const initialState = {
           return {
             ...state,
             stockList: action.payload
+          };
+
+          case FETCH_STOCK_HISTORY:
+          //console.log(action);
+          return {
+            ...state,
+            stockHistory: action.payload
+          };
+
+          case FETCH_STOCK_INTRADAY:
+          //console.log(action);
+          return {
+            ...state,
+            stockIntraday: action.payload
+          };
+
+          case FETCH_SECTOR_DATA:
+          //console.log(action);
+          return {
+            ...state,
+            sectorData: action.payload
+          };
+
+          case FETCH_NEWS_FEED:
+          //console.log(action);
+          return {
+            ...state,
+            newsFeed: action.payload
           };
       default:
         return state;

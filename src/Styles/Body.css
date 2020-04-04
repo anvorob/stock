@@ -11,6 +11,63 @@
     padding: 20px;
     text-align: center;
 }
-div{
-    color: red;
+
+.stockItem{
+  text-align:left;
+}
+.stockListTable{
+  overflow-y: scroll;
+    display: block;
+    height: 748px;
+}
+
+/* news-region begin */
+
+.grid-container-news-feed {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: 20% auto;
+  padding: 10px;
+}
+.grid-news-item {
+  text-align: left;
+  position: relative;
+}
+
+.grid-news-item img{
+  width: 100%;
+  min-height: 166px;
+}
+
+.grid-news-item i{
+  font-size: 15px;
+  margin: 4px;
+}
+
+.grid-news-item > .credits{
+  color:silver;
+  position: absolute;
+  bottom: 10px;
+}
+/* end of news region */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons");
+
+/* HEADER */
+
+.Header{
+  
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  box-shadow: 1px 0px white;
+
+}
+.headerBanner{
+  height:0; 
+    padding-bottom:30%;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20191116/pngtree-stylish-minimalistic-stock-market-finance-banner-background-image_322199.jpg);
+    background-position: center bottom;
+	  /* scale bg image proportionately */
+	  background-size: cover; /* or 100% */
 }

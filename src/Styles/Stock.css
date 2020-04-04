@@ -1,0 +1,49 @@
+.stockDetails 
+{
+    text-align: left;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.stockItemWrapper{
+    margin-top: 40px;
+}
+.stockDetails td:nth-child(odd) {
+    width: 20%;
+  }
+
+.stockDetails td:nth-child(even) {
+    width: 30%;
+}
+.companyInfoHeader{
+    text-align: left;
+}
+
+.companyTitle, .companyExMarket, .companyCurrentStats, .companyLastTrade{
+    display: block;
+}
+.companyTitle{
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+.companyExMarket, .companyLastTrade{
+    font-size: 14px;
+    color: #8b8b8b;
+}
+
+.companyCurrentStats{
+    font-size: 30px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.companyColourIndication{
+    color: #ed1000; 
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.greenText{
+    color: green;
+}
